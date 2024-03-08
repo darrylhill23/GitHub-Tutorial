@@ -53,7 +53,7 @@ SSH  (Secure Shell) keys are encrypted keys that are used in order to remotely a
 This will be the primary method of accessing a remote Git repository.
 
 
-### Creating an SSH Key
+### Creating an SSH Key Locally
 
 Create a new SSH key
 
@@ -82,7 +82,27 @@ Add your new key to the SSH-agent
 ssh-add ~/.ssh/id_rsa
 ```
 
+### Link SSH Key to Github account
 
+After you have created this SSH key type the following command and copy the output
+
+```
+cat ~/.ssh/id_rsa.pub
+```
+
+Then open a browser and sign into <href>https://github.com/</href>
+
+Once you've signed in, click on your profile in the top right corner and select **Settings**
+
+![Landing Page](Images/Landing_Page.png)
+
+Once you have selected **Settings**, you will see a page that looks something like this:
+
+![Settings Page](Images/Settings.png)
+
+Click on **SSH and GPG Keys** and then **New SSH Key**. Your screen should look like this: 
+
+![SSH-Key](Images/SSH-Key.png)
 
 ## Branches
 
