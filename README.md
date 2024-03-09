@@ -84,7 +84,7 @@ ssh-add ~/.ssh/id_rsa
 
 ### Link SSH Key to Github account
 
-After you have created this SSH key type the following command and copy the output
+After you have created this SSH key type the following command and copy the output of the following command:
 
 ```
 cat ~/.ssh/id_rsa.pub
@@ -103,6 +103,24 @@ Once you have selected **Settings**, you will see a page that looks something li
 Click on **SSH and GPG Keys** and then **New SSH Key**. Your screen should look like this: 
 
 ![SSH-Key](Images/SSH-Key.png)
+
+Paste the output of this command to the **key** field, give the key a name,
+and click **Add SSH Key**.
+
+Once you've linked these two keys, open a terminal and type 
+
+```
+ssh -T git@github.com
+```
+
+You should see an output that looks like this:
+
+```
+Hi User! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+Now you have an SSH key setup for remote access to repositories!
+
 
 ## Branches
 
@@ -144,7 +162,6 @@ When you make changes locally, they will be reflected in your local environment.
 
 When you 
 
-
 ## Repositories
 ### Overview
 
@@ -154,7 +171,69 @@ Think of them as a remote folder for all of your files.
 
 #### There can be a local and a remote version of a repo. ####
 
+Local changes to a repo will not be reflected in the remote repo until the changes are pushed to the remote. 
 
-## Creating a Repo
+### Creating a Remote Repo ###
+
+Navigate to <href>https://github.com/</href> and sign in.
+
+Click the **New** shown below to start the creation of a remote repository
+
+![Create-Repo](Images/Create_Repo.png)
 
 You can either create the local or remote repo first, but either way, you need to have the two created in order to link them.
+
+Name your repo **2404-github-tutorial**, and give it a proper description. 
+
+For the purpose of this tutorial, you are going to create a **private repository**.
+
+Now that you have created your remote repository, you are going to want to **clone a local copy of this repo** so you can make changes. 
+
+From the directory of your choosing, enter the following commands to create a file in your repo and push them to the remote.
+
+```
+echo "This is my first repo!" >> README.md
+```
+^ Creating a file and writing a line.
+
+```
+git init
+```
+
+^ Initializing the local repo
+
+```
+git add README.md
+```
+
+^ Staging our local changes to our "commit" (the changes we push to our remote repo)
+
+```
+git commit -m "Created file and added a line"
+```
+
+^ We added our changes to the commit, and now we bundled them in a commit, with a message attached, using the -m flag. Keep these simple, but clear.
+
+
+```
+git branch -M master
+```
+
+^ Creates our master branch, the branch that is the most up-to-date version of your project
+
+```
+git remote add origin git@github.com:<gitUserName>/<repoName>.git
+```
+
+^ Linking the local and remote repos to each other using the SSH key we made earlier, and naming it "origin" when referenced from the local environment
+
+```
+git push -u origin master
+```
+
+^ We push our local branch to the remote master branch, and set it as our upstream branch, meaning that from now on, when we push to our local master branch, the changes will be reflected in the rmeote branch as well
+
+
+
+
+
