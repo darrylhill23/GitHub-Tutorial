@@ -32,7 +32,7 @@ sudo apt-get update
 ``` 
 sudo apt-get install git
 ```
-----
+<!-- ----
 The below commands are for configuring your global configuration file: ```~/.gitconfig```.  
 Replace your_email with the email you used to create your git account.  
 Replace your_name with your name. 
@@ -43,7 +43,7 @@ git --config user.email your_email
 git --config user.name your name
 ```
 
-Now you should all of your basic configuration setup, now we are going to work on initializing a repository and setting up your ssh key.
+Now you should all of your basic configuration setup, now we are going to work on initializing a repository and setting up your ssh key. -->
 
 
 ## SSH-Key
@@ -58,7 +58,7 @@ This will be the primary method of accessing a remote Git repository.
 Create a new SSH key
 
 ```
- ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 Press ```enter``` to choose the default file name/location.
@@ -68,7 +68,7 @@ Press ```enter``` again to keep a blank password.
 Press ```enter``` one last time to confirm this password.
 
 This sequence will create two new files in the ~/.ssh directory: 
-``` id_rsa ``` (private key) and ```id_rsa.pub``` (public key).
+``` id_ed25519 ``` (private key) and ```id_ed25519.pub``` (public key).
 
 Start the SSH agent
 
@@ -79,15 +79,15 @@ eval "$(ssh-agent -s)"
 Add your new key to the SSH-agent
 
 ```
-ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_ed25519
 ```
 
 ### Link SSH Key to Github account
 
-After you have created this SSH key type the following command and copy the output
+After you have created this SSH key, type the following command and copy the output
 
 ```
-cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_ed25519.pub
 ```
 
 Then open a browser and sign into <href>https://github.com/</href>
@@ -104,9 +104,44 @@ Click on **SSH and GPG Keys** and then **New SSH Key**. Your screen should look 
 
 ![SSH-Key](Images/SSH-Key.png)
 
+Add your key and name it appropriately.
+
+After this step is done, type the following command **exactly** to authenticate/test your connection.
+
+```
+ssh -T git@github.com
+```
+
+Type: ```yes```
+
+You should see an ouput that among other things, contains this:
+
+```
+Hi <userName>! You've successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed.
+```
+
+If you see a message similar to this, you are all set up, and can move on to the next steps.
+
+## Repositories: the Basics
+### Overview
+
+Repositories (repos) are the foundation of git. There are the 'hubs' of code that contain all of the remote branches related to a given project.
+
+Think of them as a remote folder for all of your files.
+
+They live on <href>https://github.com</href>, where they can be either **private** to the creator and select collaborators, or **public** for everyone to see.
+
+If you want to make changes in a given repository, you **can** use the Github Web Editor, but in a large majority of cases, you should clone the repo locally and make changes there instead.
+
+#### There will only ever be one remote instance of a repository, like <href>https://github.com/Azure/azure-cli</href>. But there can be an infinite number of clones of a repo. ####
+
+This may not make sense right now, but it will soon, I promise!
+
+
 ## Branches
 
-Branches are one of the two main concepts of Git.
+<!-- Branches are one of the two main concepts of Git. -->
 
 In every repository, there is a **primary branch**, sometimes called the **main** or **master** branch, varying from repository to repository. 
 
@@ -114,11 +149,28 @@ Picture a branch as a horizontal line, with a plethora of dots plotted on it. Ea
 
 **You can (and should) branch off of the primary branch.** Your branch originates from a given commit in a repository and runs **parallel to the primary branch.** Doing this allows you to make changes to the code base without them being made in the primary branch, while still keeping up with the changes made in the primary branch. **You can experiment with your changes and test them separately from the primary branch, on your own branch.**
 
+By default, you will be on the **primary branch** of a given repo, and the name of this branch will vary depending on the repo you are working on. The two most common names are **main** and **master**.
+
+Check what branch you are on at any time with the following command: 
+
+```
+git branch
+```
+
+The output will look something like this: 
+
+```
+* master
+```
+The '*' is a reference to which branch you currently have checked out.
+
 You can create a new branch with the following command:
 
 ```
 git branch <branchName>
 ```
+
+Note that this will create a branch off of the current branch you are on, carrying over all of the previous changes.
 
 You then need to "check out" the branch, switching your local file structure and files to match the branch, so your changes and future commits affect your new branch as opposed to the primary branch. You can do so with the following command.
 
@@ -135,24 +187,41 @@ Note that there are two types of branches, **local branches** and  **remote bran
 
 As mentioned before, you can interact with branches in many different ways. Below are the basics.
 
-### Committing
+### Adding
 
 When you make changes locally, they will be reflected in your local environment.
 
+Type the following command from any location within your local copy of the repository, to view the files that have been changed:
+```
+git status
+```
 
-### Adding 
+In order to push your changes to the remote version of your branch, you first need to create a commit. Before you can create a commit you need to specify which files you want to be included in the commit package that will be pushed to the remote branch.
 
-When you 
+Once you see which files you have changed with the previous command, you can now add them to the commit with the following command:
+
+```
+git add <filePath>
+```
+
+Note the file path will vary based on where your terminal is pointing within the repo. 
+
+Alternatively, if you want every file you have changed to be included in the commit, move your terminal to the root of the repository and enter the following command:
+
+```
+git add .
+```
+
+This is a special instance of the add command. Recall that ```.``` within the terminal refers to the current directory. 
+
+Here the ```git add``` command will select every **changed** file in the current directory and sub-directories, and add them to the commit bundle to be sent to the remote.
+
+### Committing
+
+After you have added the files you want to include in your commit bundle, you can finish up the commit by adding a message to the bundle that goes up to the remote. 
 
 
-## Repositories
-### Overview
 
-Repositories (repos) are the foundation of git. There are the 'hubs' of code that contain all of the remote branches related to a given project.
-
-Think of them as a remote folder for all of your files.
-
-#### There can be a local and a remote version of a repo. ####
 
 
 ## Creating a Repo
