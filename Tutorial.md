@@ -220,6 +220,54 @@ Here the ```git add``` command will select every **changed** file in the current
 
 After you have added the files you want to include in your commit bundle, you can finish up the commit by adding a message to the bundle that goes up to the remote. 
 
+There are two main ways you can do this:
+
+1. Using default editor
+```
+git commit
+```
+This command will open up your computer's default text editor, where you will enter a message and then save the file.
+
+2. Using the ```-m``` flag
+```
+git commit -m "Some commit message"
+```
+If you don't want to use your computer's default editor, or if you just want a short message, you can use this method. Just include your message as a string after the ```-m``` flag. 
+
+After you have added the changed files to your commit bundle, and tagged it with a message, you are ready to push your changes to the remote version of your branch.
+
+### Pushing
+
+Pushing is the action of taking a local commit and pushing it to the remote version of the current branch.
+
+In git, the remote repository is referred to by an alias, which is usually ```origin```. To be safe, double-check this with the following command:
+```
+git remote
+```
+
+If you are working on a local branch that you created from the command line, it will only exist on your local machine. You will need to set the ```upstream branch```, which will just be a remote branch of the same name, so all future pushes will move upstream to the remote branch you specify.
+
+Do this with the following command:
+**Remember** this is only on the **first** commit to the remote from a **local branch you created**.
+
+
+```
+git push --set-upstream <remoteName> <yourBranchName>
+```
+
+In this command, you are specifying the remote branch name of your local branch, and pushing your commit to it.
+
+Remember, this will be need to be done on the **first commit for every new local branch you create**.
+
+All subsequent pushes can be done with this command:
+```
+git push
+```
+
+Now that you know the basics for interacting with an existing repository, its time to create your own.
+
+
+
 
 
 
