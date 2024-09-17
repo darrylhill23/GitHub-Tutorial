@@ -114,7 +114,7 @@ ssh -T git@github.com
 
 Type: ```yes```
 
-You should see an ouput that among other things, contains this:
+You should see an output that among other things, contains this:
 
 ```
 Hi <userName>! You've successfully authenticated, but GitHub does not provide shell access.
