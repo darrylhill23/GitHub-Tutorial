@@ -266,12 +266,43 @@ git push
 
 Now that you know the basics for interacting with an existing repository, its time to create your own.
 
-
-
-
-
-
-
 ## Creating a Repo
 
-You can either create the local or remote repo first, but either way, you need to have the two created in order to link them.
+You can either create the local or remote repo first, but either way, you need to have the two created in order to link them. It is **strongly** recommended that you create the remote repo first, and thus, this tutorial will only cover the method of creating the remote repo first.
+
+Head to https://github.com/, sign in, and click the green ```New``` button to start creating your new repo.
+
+![alt text](Images/CreateRepo.png)
+
+
+You will then be presented with the following page.
+
+![alt text](Images/RepoCreationPage.png)
+
+The repository name is the only required field, for this tutorial, you will name it: ```GitTutorial<YourStudentNumber>``` where "YourStudentNumber is your StudentNumber. 
+
+You can provide an optional description if you would like.
+
+Specify if it will be Public or Private, in the case of this tutorial, select Private.
+
+You can add a README file if prefer, which is a markdown file that will be present at the landing page of the repo, often times containing information about the project and required dependencies.
+
+A ```.gitignore``` file is a special kind of file specific to git, that allows you to specify which files Git should ignore changes in. This could be useful for large dependencies that can be downloaded by users, or for text files that contain API keys. 
+
+Finally, the license for your repo will not matter in this tutorial, but they are used for legal reasons to restrict the distribution of your project.
+
+Click ```Create repository```.
+
+Congratulations! You have now created your first Git Repository!
+
+**Ensure that you followed the previous steps for setting up your Git SSH keys, because the next steps of this tutorial and the submission require this to be set up.**
+
+### Cloning a Repo Through SSH
+
+Now that you have your remote repo set up, you will clone it locally and make your first commit.
+
+___
+
+## Tutorial Submission for Marks
+
+Now that you have an SSH key setup and the basics of Git understood. Its time to apply this knowledge.
