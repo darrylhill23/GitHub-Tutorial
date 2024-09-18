@@ -297,12 +297,37 @@ Congratulations! You have now created your first Git Repository!
 
 **Ensure that you followed the previous steps for setting up your Git SSH keys, because the next steps of this tutorial and the submission require this to be set up.**
 
+
 ### Cloning a Repo Through SSH
 
 Now that you have your remote repo set up, you will clone it locally and make your first commit.
+
+Enter the following command into your terminal from your desired file location. Note the cloning will create a new folder with your repo name, so you do not need to make one.
+
+```
+git clone git@github.com:<yourUsername>/GitTutorial<YourStudentNumber>
+```
+
+You will see a folder created with your repo name, and this message in the terminal:
+
+```
+warning: you appear to have cloned an empty repository.
+```
+
+This is okay! As in the next section, we will add a file to our repo! You now have a local clone of your Git repo.
 
 ___
 
 ## Tutorial Submission for Marks
 
 Now that you have an SSH key setup and the basics of Git understood. Its time to apply this knowledge.
+
+For this tutorial, you will be asked to submit your new Repository to Gradescope.
+
+The naming of the repository must be exact, and the repository should contain a file called ```submission.txt``` that has only the sentence: "The Quick Brown Fox Jumps Over The Lazy Dog"
+
+That's it. That's the tutorial :)
+
+When you go to submit on Gradescope, make sure you select "Github" as your submission type and link your account. 
+
+Select your repo name and the branch ```main``` and confirm your submission.
