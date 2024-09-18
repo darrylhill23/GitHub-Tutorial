@@ -32,18 +32,18 @@ sudo apt-get update
 ``` 
 sudo apt-get install git
 ```
-<!-- ----
+----
 The below commands are for configuring your global configuration file: ```~/.gitconfig```.  
 Replace your_email with the email you used to create your git account.  
 Replace your_name with your name. 
 ```
-git --config user.email your_email
+git config --global user.email "your_email"
 ```
 ```
-git --config user.name your name
+git config --global user.name "your_name"
 ```
 
-Now you should all of your basic configuration setup, now we are going to work on initializing a repository and setting up your ssh key. -->
+Now you should all of your basic configuration setup, now we are going to work on initializing a repository and setting up your ssh key.
 
 
 ## SSH-Key
