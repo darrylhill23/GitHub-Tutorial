@@ -1,5 +1,5 @@
 # Git Tutorial 
-
+ 
 This tutorial operates under the following assumptions
 
 - OS: Ubuntu or some Linux Flavor 
