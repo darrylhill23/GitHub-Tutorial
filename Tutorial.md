@@ -324,10 +324,10 @@ Now that you have an SSH key setup and the basics of Git understood. Its time to
 
 For this tutorial, you will be asked to submit your new Repository to Gradescope.
 
-The naming of the repository must be exact, and the repository should contain a file called ```submission.txt``` that has only the sentence: "The Quick Brown Fox Jumps Over The Lazy Dog"
-
-That's it. That's the tutorial :)
+Please complete Sections 5.2 (the Date class) and 5.3 (the File class) from Assignment 2. You will be submitting 4 files, Date.h, Date.cc, File.h, and File.cc. Add these files to your repository.
 
 When you go to submit on Gradescope, make sure you select "Github" as your submission type and link your account. 
 
 Select your repo name and the branch ```main``` and confirm your submission.
+
+The test is very rudimentary - it will check to make sure your File class prints as it should. It is out of 2 marks, and you will either get 2 or 0. 
