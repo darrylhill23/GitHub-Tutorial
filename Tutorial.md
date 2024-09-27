@@ -141,6 +141,8 @@ This may not make sense right now, but it will soon, I promise!
 
 ## Branches
 
+NOTE: you will not be able to create a branch until you commit something. So this section should be done after the Commit section. 
+
 <!-- Branches are one of the two main concepts of Git. -->
 
 In every repository, there is a **primary branch**, sometimes called the **main** or **master** branch, varying from repository to repository. 
