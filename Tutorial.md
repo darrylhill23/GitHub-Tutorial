@@ -324,12 +324,10 @@ ___
 
 Now that you have an SSH key setup and the basics of Git understood. Its time to apply this knowledge.
 
-For this tutorial, you will be asked to submit your new Repository to Gradescope.
+For this tutorial, you will be asked to submit your Tutorial 5 to Gradescope using Github.
 
-Please complete Sections 5.2 (the Date class) and 5.3 (the File class) from Assignment 2. You will be submitting 4 files, Date.h, Date.cc, File.h, and File.cc. Add these files to your repository.
+Please follow the instructions for Tutorial 5. You will be submitting 6 files, RGB.h, RGB.cc, TextArea.h, TextArea.cc, TAArray.h and TAArray.cc (you may include the other files, such as test.cc and the Tester class, if you like). Add these files to your repository.
 
 When you go to submit on Gradescope, make sure you select "Github" as your submission type and link your account. 
 
 Select your repo name and the branch ```main``` and confirm your submission.
-
-The test is very rudimentary - it will check to make sure your File class prints as it should. It is out of 2 marks, and you will either get 2 or 0. 
