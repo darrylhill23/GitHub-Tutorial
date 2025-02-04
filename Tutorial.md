@@ -326,7 +326,7 @@ Now that you have an SSH key setup and the basics of Git understood. Its time to
 
 For this tutorial, you will be asked to submit your Tutorial 5 to Gradescope using Github.
 
-Please follow the instructions for Tutorial 5. You will be submitting 6 files, RGB.h, RGB.cc, TextArea.h, TextArea.cc, TAArray.h and TAArray.cc (you may include the other files, such as test.cc and the Tester class, if you like). Add these files to your repository.
+Please follow the instructions for Tutorial 5. You should add the entire tutorial5 folder, and all files inside, to your repository.
 
 When you go to submit on Gradescope, make sure you select "Github" as your submission type and link your account. 
 
